@@ -1,6 +1,6 @@
 import Container from "../global/Container";
 import websiteLogo from "../../assets/logo.svg";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { useState } from "react";
 const Navbar = () => {
@@ -71,12 +71,15 @@ const Navbar = () => {
               </div>
 
               <div className="flex items-center gap-2">
-                <div className=" w-10 h-10 items-center justify-center cursor-pointer flex relative">
+                <Link
+                  to="/cart"
+                  className=" w-10 h-10 items-center justify-center cursor-pointer flex relative"
+                >
                   <ShoppingBag className="text-[#32BEA6]" />
                   <div className="bg-red-600 rounded-full  w-4 h-4 flex justify-center items-center absolute top-1 right-0 animate-bounce">
                     <span className=" text-white text-xs">1</span>
                   </div>
-                </div>
+                </Link>
                 <div className="rounded-full w-10 h-10 border border-[#32BEA6] items-center justify-center cursor-pointer flex ">
                   <User className="text-[#99f1e2]" />
                 </div>

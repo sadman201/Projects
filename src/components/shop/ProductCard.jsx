@@ -1,11 +1,10 @@
-import pi from "../../assets/images/i1.jpg";
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, handleGetProductId }) => {
   return (
     <div className=" relative ">
       <div>
         <div className="w-full h-40 relative">
           <img
-            src={pi}
+            src={product?.thumbnail}
             alt="productImage"
             className="w-full h-full rounded-t-xl object-cover "
           />
@@ -22,7 +21,10 @@ const ProductCard = ({ product }) => {
           <span>{product.discountPercentage.toFixed(0)}%</span>
         </div>
         <div className="mt-4 space-y-3">
-          <button className="btn btn-primary w-full text-sm">
+          <button
+            className="btn btn-primary w-full text-sm"
+            onClick={() => handleGetProductId(product?.id)}
+          >
             Add to Cart
           </button>
           <button className="btn btn-outline w-full text-sm">Details</button>
